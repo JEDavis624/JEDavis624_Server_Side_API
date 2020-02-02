@@ -5,29 +5,30 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Weather Dashboard</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src='assets/app.js'></script>
 </head>
 <body>
     <h1>Weather Dashboard</h1>
     <div>
         <h2>Current Weather Conditions</h2>
         
-        
-        Search for a City: 
-        <input id="citySearch" type="text" name="city">
-        <input type="submit" value="Search">
+    <form id="city-form">
+        <label for="city-input">Search for a City</label><br>
+        <input id="city-input" type="text">
+        <input id="find-city" type="submit" value="Search">
+    </form> 
 
-
-  <div class="city"></div>
-  <div class="date"></div>
+  <div id="city"></div>
+  <div id="date"></div>
   <div>Icon image (visual representation of weather conditions)</div>
-  <div class="temp"></div>
-  <div class="humidity"></div>
-  <div class="wind"></div>
-  <div class="uv"></div>
+  <div id="temp"></div>
+  <div id="humidity"></div>
+  <div id="wind"></div>
+  <div id="uv"></div>
 
 
 
@@ -43,6 +44,6 @@
             <li>Humidity</li>
         </ul>
     </div>
-    <script src='app.js'></script>
+    
 </body>
 </html>
