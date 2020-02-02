@@ -8,22 +8,28 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='app.js'></script>
+    
 </head>
 <body>
+    <h1>Weather Dashboard</h1>
     <div>
         <h2>Current Weather Conditions</h2>
-        <ul>
         
-  <li id="city">City</li>
-  <li>Date</li>
-  <li>Icon image (visual representation of weather conditions)</li>
-  <li>Temperature</li>
-  <li>Humidity</li>
-  <li>Wind speed</li>
-  <li>UV index</li>
+        
+        Search for a City: 
+        <input id="citySearch" type="text" name="city">
+        <input type="submit" value="Search">
 
-            </ul>
+
+  <div class="city"></div>
+  <div class="date"></div>
+  <div>Icon image (visual representation of weather conditions)</div>
+  <div class="temp"></div>
+  <div class="humidity"></div>
+  <div class="wind"></div>
+  <div class="uv"></div>
+
+
 
 
     </div>
@@ -37,6 +43,6 @@
             <li>Humidity</li>
         </ul>
     </div>
-        <h1>Hello World!</h1>
+    <script src='app.js'></script>
 </body>
 </html>
