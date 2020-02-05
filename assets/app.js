@@ -1,17 +1,18 @@
 $(document).ready(function(){
 
  const now = moment().format(' (l)');
- let forecast1 = moment().add(1, 'days').format(' (l)');
- let forecast2 = moment().add(2, 'days').format(' (l)');
- let forecast3 = moment().add(3, 'days').format(' (l)');
- let forecast4 = moment().add(4, 'days').format(' (l)');
- let forecast5 = moment().add(5, 'days').format(' (l)');
+ const forecast1 = moment().add(1, 'days').format(' (l)');
+ const forecast2 = moment().add(2, 'days').format(' (l)');
+ const forecast3 = moment().add(3, 'days').format(' (l)');
+ const forecast4 = moment().add(4, 'days').format(' (l)');
+ const forecast5 = moment().add(5, 'days').format(' (l)');
 
 $("#find-city").on("click", function(event) {
 
   event.preventDefault();
 
   var city = $("#city-input").val();
+  // var cityHistory = $("#city-input").val.trim()
 
   var queryURLcurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=85bf2b796bdb140ca54de0c2a152a712" 
 
@@ -27,6 +28,7 @@ $("#find-city").on("click", function(event) {
         $("#temp").text("Temperature: " + response.main.temp + " °F");
         $("#humidity").text("Humidity: " + response.main.humidity + "%");
         $("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
+
 
         var lat = response.coord.lat
         var lon = response.coord.lon
@@ -72,7 +74,8 @@ $("#find-city").on("click", function(event) {
           $("#tempDay5").text("Temperature: " + response.list[31].main.temp + " °F");
           $("#humidityDay5").text("Humidity: " + response.list[31].main.humidity + "%");
           
-        
+          // localStorage.setItem("#city-input", cityHistory);
+
       });
 
  
