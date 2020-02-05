@@ -33,7 +33,7 @@ $("#find-city").on("click", function(event) {
         var lat = response.coord.lat
         var lon = response.coord.lon
 
-        var queryURLuvIndex =  "http://api.openweathermap.org/data/2.5/uvi?appid=85bf2b796bdb140ca54de0c2a152a712&lat=" + lat + "&lon=" + lon 
+        var queryURLuvIndex =  "https://api.openweathermap.org/data/2.5/uvi?appid=85bf2b796bdb140ca54de0c2a152a712&lat=" + lat + "&lon=" + lon 
 
         $.ajax({
           url: queryURLuvIndex,
@@ -45,7 +45,7 @@ $("#find-city").on("click", function(event) {
            $("#uv").text("UV Index: " + response.value);
       });
 
-        var queryURL5day = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=85bf2b796bdb140ca54de0c2a152a712"
+        var queryURL5day = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=85bf2b796bdb140ca54de0c2a152a712"
 
         $.ajax({
          url: queryURL5day,
