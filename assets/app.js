@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
  const now = moment().format(' (l)');
+ let forecast1 = moment().add(1, 'days').format(' (l)');
+ let forecast2 = moment().add(2, 'days').format(' (l)');
+ let forecast3 = moment().add(3, 'days').format(' (l)');
+ let forecast4 = moment().add(4, 'days').format(' (l)');
+ let forecast5 = moment().add(5, 'days').format(' (l)');
 
 $("#find-city").on("click", function(event) {
 
@@ -17,7 +22,7 @@ $("#find-city").on("click", function(event) {
         console.log(queryURLcurrent);
         console.log(response);
         
-        $("#img").text(response.weather[0].icon);
+        // $("#img").text(response.weather[0].icon);
         $("#city").html("<h2>" + response.name + now + "</h2>");
         $("#temp").text("Temperature: " + response.main.temp + " °F");
         $("#humidity").text("Humidity: " + response.main.humidity + "%");
@@ -47,23 +52,23 @@ $("#find-city").on("click", function(event) {
           console.log(queryURL5day);
           console.log(response);
 
-          // $("#dateDay1").html("<p>" + response.list[0].sys.dt_txt + "</p>");
+          $("#dateDay1").text(forecast1);
           $("#tempDay1").text("Temperature: " + response.list[0].main.temp + " °F");
           $("#humidityDay1").text("Humidity: " + response.list[0].main.humidity + "%");
           
-
+          $("#dateDay2").text(forecast2);
           $("#tempDay2").text("Temperature: " + response.list[7].main.temp + " °F");
           $("#humidityDay2").text("Humidity: " + response.list[7].main.humidity + "%");
           
-
+          $("#dateDay3").text(forecast3);
           $("#tempDay3").text("Temperature: " + response.list[15].main.temp + " °F");
           $("#humidityDay3").text("Humidity: " + response.list[15].main.humidity + "%");
           
-
+          $("#dateDay4").text(forecast4);
           $("#tempDay4").text("Temperature: " + response.list[23].main.temp + " °F");
           $("#humidityDay4").text("Humidity: " + response.list[23].main.humidity + "%");
           
-
+          $("#dateDay5").text(forecast5);
           $("#tempDay5").text("Temperature: " + response.list[31].main.temp + " °F");
           $("#humidityDay5").text("Humidity: " + response.list[31].main.humidity + "%");
           
