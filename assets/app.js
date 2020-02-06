@@ -1,18 +1,55 @@
+var searchedCities = [];
+
+
 $(document).ready(function(){
 
+// if localstorage.cityHistory exists split the string in the key cityHistory and set to the value of searchedCities
+if(localStorage.cityHistory){
+  searchedCities = localStorage.cityHistory.split(",")
+  console.log(searchedCities)
+}
+
+// grab div to populate searchedCity buttons
+let div = document.getElementById("searched")
+
+
+// now taking the local time and display with current weather
  const now = moment().format(' (l)');
+
+//  taking the local time and adding x number of days
  const forecast1 = moment().add(1, 'days').format(' (l)');
  const forecast2 = moment().add(2, 'days').format(' (l)');
  const forecast3 = moment().add(3, 'days').format(' (l)');
  const forecast4 = moment().add(4, 'days').format(' (l)');
  const forecast5 = moment().add(5, 'days').format(' (l)');
 
+
+ // for each item create a button, set button inner value to searchedCity[i], append button to searchedCitiesbutton div
+ for(let i = 0; i < searchedCities.length; i++){
+  let btn = document.createElement("button")
+   btn.innerHTML = searchedCities[i]
+   div.append(btn)
+ }
+
+// when the find city button is clicked 
 $("#find-city").on("click", function(event) {
 
   event.preventDefault();
 
+
+  // grab value typed into the city input and save to variable
   var city = $("#city-input").val();
-  // var cityHistory = $("#city-input").val.trim()
+
+
+  // creating a button for the most recently searched city and appends to the searchedCitiesbutton div
+  let btn2 = document.createElement("button")
+  btn2.innerHTML = city
+  div.append(btn2)
+  
+  // add this element to the searched cities array
+  searchedCities.push(city)
+  localStorage.setItem("cityHistory", searchedCities )
+  var historyButton = document.createElement("button")
 
   var queryURLcurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=85bf2b796bdb140ca54de0c2a152a712" 
 
